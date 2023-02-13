@@ -1,0 +1,11 @@
+.ProductImgCard {
+  width: 100%;
+  z-index: -1;
+}
+.slider {
+  width: 100%;
+  display: flex;
+}
+.slider img {
+  width: 100%;
+}

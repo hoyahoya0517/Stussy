@@ -1,0 +1,63 @@
+.footer {
+  width: 100%;
+  padding: 0 15px;
+}
+.top {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.8rem;
+}
+.top span {
+  cursor: pointer;
+}
+.news {
+  padding-top: 15px;
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+}
+.bottom input {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid rgb(73, 73, 73);
+  text-align: center;
+}
+.bottom input:focus {
+  outline: none;
+}
+.bottom button {
+  height: 37px;
+  background-color: black;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.icon {
+  width: 100%;
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+  justify-content: center;
+}
+.icon svg {
+  cursor: pointer;
+}
+.copy {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+.company {
+  padding: 20px 0 45px 0;
+  font-size: 0.8rem;
+  text-align: center;
+}

@@ -1,0 +1,65 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0 15px;
+  width: 100%;
+}
+.top {
+  font-weight: 700;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0 20px 0;
+}
+.menu span {
+  cursor: pointer;
+}
+.line1 {
+  width: 80px;
+  border-top: 1px solid rgb(73, 73, 73);
+  text-align: center;
+  padding-top: 2px;
+}
+.line2 {
+  width: 80px;
+  border-bottom: 1px solid rgb(73, 73, 73);
+  text-align: center;
+  padding-bottom: 2px;
+}
+.info {
+  width: 100%;
+}
+.record {
+  color: #c6c6c6;
+  border-top: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
+  padding: 12px 0;
+}
+.accountInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  border-bottom: 1px solid #c6c6c6;
+  gap: 12px;
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.nameImg {
+  display: flex;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.nameImg img {
+  width: 100%;
+}
+.accountInfo span:nth-child(1) {
+  font-weight: 700;
+}

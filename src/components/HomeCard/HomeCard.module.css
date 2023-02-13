@@ -1,0 +1,19 @@
+.homeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+}
+.homeCard img {
+  width: 100%;
+  cursor: pointer;
+}
+.name {
+  display: flex;
+  justify-content: center;
+}
+.name span {
+  cursor: pointer;
+}

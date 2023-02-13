@@ -1,0 +1,24 @@
+.options {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 1px rgb(175, 175, 175) solid;
+  font-weight: 700;
+}
+.selOption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 1px rgb(36, 36, 36) solid;
+  font-weight: 700;
+}

@@ -1,0 +1,38 @@
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0 15px;
+  width: 100%;
+}
+.top {
+  font-weight: 700;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.tango {
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 100%;
+  border-bottom: 1px solid #c6c6c6;
+  padding: 18px 0;
+}
+.google {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.login button {
+  height: 37px;
+  background-color: black;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  border: none;
+}

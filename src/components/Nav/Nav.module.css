@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 3.75rem;
+  background-color: white;
+  padding: 0 15px;
+  position: fixed;
+  z-index: 9999;
+}
+.modalOn {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9999;
+}
+.hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-10000%);
+}
+.menu {
+  display: flex;
+  align-items: center;
+  flex-basis: 33.33%;
+}
+.menu svg {
+  cursor: pointer;
+}
+.sideMenuOn {
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  z-index: 9999;
+}
+.logo {
+  flex-basis: 33.34%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.logo svg {
+  cursor: pointer;
+}
+.right {
+  flex-basis: 33%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  align-items: center;
+}
+.search {
+  display: flex;
+  cursor: pointer;
+}
+.bag {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+}
+.bagIcon {
+  z-index: 2;
+}
+.cartLength {
+  font-size: 0.7rem;
+  display: flex;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.sideBagOn {
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(0%);
+  z-index: 9999;
+}
