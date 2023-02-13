@@ -9,14 +9,14 @@ import {
 import { get, getDatabase, ref, remove, set } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBnygPHG4ql_UPu6LTCgdbp61vq3-IDvAc",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "stussyclone.firebaseapp.com",
   databaseURL:
     "https://stussyclone-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "stussyclone",
   storageBucket: "stussyclone.appspot.com",
   messagingSenderId: "953870645029",
-  appId: "1:953870645029:web:9ef8c5f5330863de6c8ccc",
+  appId: process.env.REACT_APP_FIREBASE_API_ID,
 };
 
 const app = initializeApp(firebaseConfig);
