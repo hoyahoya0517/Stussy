@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../api/firebase";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from "./Collections.module.css";
-import scrollLock from "scroll-lock";
 import { useNavContext } from "../../context/NavContext";
+import scrollLock from "scroll-lock";
 
 function Collections() {
-  const { onSideMenu, onSideBag } = useNavContext();
+  const { onSideMenu, onSideBag, navRef } = useNavContext();
   useEffect(() => {
     if (onSideMenu || onSideBag) {
+      scrollLock.addScrollableSelector(navRef);
       scrollLock.disablePageScroll();
     } else {
       scrollLock.enablePageScroll();

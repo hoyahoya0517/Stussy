@@ -4,9 +4,10 @@ import styles from "./Home.module.css";
 import { useNavContext } from "../../context/NavContext";
 import scrollLock from "scroll-lock";
 function Home() {
-  const { onSideMenu, onSideBag } = useNavContext();
+  const { onSideMenu, onSideBag, navRef } = useNavContext();
   useEffect(() => {
     if (onSideMenu || onSideBag) {
+      scrollLock.addScrollableSelector(navRef);
       scrollLock.disablePageScroll();
     } else {
       scrollLock.enablePageScroll();

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Stussy from "../../svg/Stussy/Stussy";
 import styles from "./Nav.module.css";
 import { BsList, BsSearch, BsBag } from "react-icons/bs";
@@ -8,11 +8,12 @@ import SideBag from "../SideBag/SideBag";
 import CartHooks from "../../hooks/CartHooks/CartHooks";
 
 function Nav() {
-  const { onSideMenu, setOnSideMenu, onSideBag, setOnSideBag } =
+  const { onSideMenu, setOnSideMenu, onSideBag, setOnSideBag, navRef } =
     useNavContext();
   const {
     cartQuery: { isLoading, error, data: carts },
   } = CartHooks();
+
   if (isLoading) {
     return <></>;
   }
@@ -31,6 +32,7 @@ function Nav() {
         />
         <div
           className={onSideMenu ? `${styles.sideMenuOn}` : `${styles.hidden}`}
+          ref={navRef}
         >
           <SideMenu />
         </div>
@@ -53,6 +55,7 @@ function Nav() {
           <span className={styles.cartLength}>{carts && carts.length}</span>
           <div
             className={onSideBag ? `${styles.sideBagOn}` : `${styles.hidden}`}
+            ref={navRef}
           >
             <SideBag carts={carts && carts} />
           </div>

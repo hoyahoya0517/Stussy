@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavContext } from "../../context/NavContext";
 import styles from "./SideMenu.module.css";
 import { BsXLg } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 function SideMenu() {
+  const { onSideMenu, onSideBag, setOnSideMenu } = useNavContext();
   const navigate = useNavigate();
-  const { setOnSideMenu } = useNavContext();
+
   return (
     <div className={styles.sideMenu}>
       <div className={styles.x}>

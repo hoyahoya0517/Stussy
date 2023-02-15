@@ -14,9 +14,10 @@ import scrollLock from "scroll-lock";
 
 export const OptionContext = createContext();
 function Products() {
-  const { onSideMenu, onSideBag } = useNavContext();
+  const { onSideMenu, onSideBag, navRef } = useNavContext();
   useEffect(() => {
     if (onSideMenu || onSideBag) {
+      scrollLock.addScrollableSelector(navRef);
       scrollLock.disablePageScroll();
     } else {
       scrollLock.enablePageScroll();

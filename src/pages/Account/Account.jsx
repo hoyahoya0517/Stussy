@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Account.module.css";
 import {
   BsInstagram,
@@ -15,9 +15,12 @@ import scrollLock from "scroll-lock";
 import { useNavContext } from "../../context/NavContext";
 
 function Account() {
-  const { onSideMenu, onSideBag } = useNavContext();
+  const accountRef = useRef();
+  const { onSideMenu, onSideBag, navRef } = useNavContext();
+  console.log(navRef);
   useEffect(() => {
     if (onSideMenu || onSideBag) {
+      scrollLock.addScrollableSelector(navRef);
       scrollLock.disablePageScroll();
     } else {
       scrollLock.enablePageScroll();
@@ -31,7 +34,7 @@ function Account() {
     }
   }, [user]);
   return (
-    <div className={styles.account}>
+    <div className={styles.account} ref={accountRef}>
       <div className={styles.top}>ACCOUNT</div>
       <div className={styles.login}>
         <div className={styles.tango}>로그인</div>
