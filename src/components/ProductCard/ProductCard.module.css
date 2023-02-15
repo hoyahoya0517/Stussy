@@ -16,6 +16,7 @@
 .name {
   font-weight: 700;
   cursor: pointer;
+  text-align: center;
 }
 .price {
   padding-top: 10px;
