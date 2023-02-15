@@ -8,7 +8,7 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { login } from "../../api/firebase";
+import { login, login2 } from "../../api/firebase";
 import { useUserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import scrollLock from "scroll-lock";
@@ -17,7 +17,6 @@ import { useNavContext } from "../../context/NavContext";
 function Account() {
   const accountRef = useRef();
   const { onSideMenu, onSideBag, navRef } = useNavContext();
-  console.log(navRef);
   useEffect(() => {
     if (onSideMenu || onSideBag) {
       scrollLock.addScrollableSelector(navRef);
@@ -43,7 +42,7 @@ function Account() {
         </div>
         <button
           onClick={() => {
-            login();
+            login2();
           }}
         >
           로그인

@@ -1,9 +1,11 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
+  getRedirectResult,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
 } from "firebase/auth";
 import { get, getDatabase, ref, remove, set } from "firebase/database";
@@ -21,9 +23,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
-// provider.setCustomParameters({
-//   prompt: "select_account",
-// });
+provider.setCustomParameters({
+  prompt: "select_account",
+  login_hint: "user@example.com",
+});
 const auth = getAuth(app);
 const db = getDatabase();
 
@@ -31,6 +34,17 @@ export function login() {
   signInWithPopup(auth, provider).then(() => {
     console.log("login ok");
   });
+}
+
+export function login2() {
+  signInWithRedirect(auth, provider);
+  getRedirectResult(auth)
+    .then((result) => {
+      console.log("login...");
+    })
+    .catch((error) => {
+      console.log("login failed");
+    });
 }
 
 export function logout() {
@@ -42,6 +56,7 @@ export function logout() {
 export function userState(callback) {
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      console.log("login ok");
       callback(user);
     } else {
     }
