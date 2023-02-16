@@ -64,7 +64,7 @@ function Account() {
           로그인이 안 될 시
         </span>
         <div className={tmiOn ? `${styles.tmi}` : `${styles.hidden}`}>
-          <span>설정 - Safari - 파업 차단 옵션 끄기로 변경</span>
+          <span>설정 - Safari - 팝업 차단 옵션 끄기로 변경</span>
           <span>설정 - Safari - 고급 - JavaScript 활성화</span>
         </div>
       </div>
