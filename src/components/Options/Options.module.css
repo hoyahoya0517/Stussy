@@ -3,8 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  font-size: 0.7rem;
-  word-spacing: 0rem;
+  font-size: 0.9rem;
 }
 .option {
   display: flex;
@@ -14,6 +13,7 @@
   height: 45px;
   border: 1px rgb(175, 175, 175) solid;
   font-weight: 700;
+  text-align: center;
 }
 .selOption {
   display: flex;
@@ -23,4 +23,5 @@
   height: 45px;
   border: 1px rgb(36, 36, 36) solid;
   font-weight: 700;
+  text-align: center;
 }
