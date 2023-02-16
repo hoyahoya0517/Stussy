@@ -10,7 +10,8 @@ REACT와 FIREBASE를 이용해 Stussy사이트를 클론코딩
 REACT<br>
 FIREBASE<br>
 # Link
-https://stussyclone.web.app/
+https://stussyclone.web.app/ <br>
+데스크탑으로 볼 시 개발자모드 모바일로 볼 것
 
 
 
