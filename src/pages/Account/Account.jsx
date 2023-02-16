@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Account.module.css";
 import {
   BsInstagram,
@@ -8,7 +8,7 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { login, login2 } from "../../api/firebase";
+import { login, login2, login3 } from "../../api/firebase";
 import { useUserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import scrollLock from "scroll-lock";
@@ -42,7 +42,9 @@ function Account() {
         </div>
         <button
           onClick={() => {
-            login2();
+            login((currUser) => {
+              setUser(currUser);
+            });
           }}
         >
           로그인

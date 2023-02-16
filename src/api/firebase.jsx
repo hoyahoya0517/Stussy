@@ -4,6 +4,7 @@ import {
   getRedirectResult,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithCredential,
   signInWithPopup,
   signInWithRedirect,
   signOut,
@@ -25,27 +26,21 @@ const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
   prompt: "select_account",
-  login_hint: "user@example.com",
 });
 const auth = getAuth(app);
 const db = getDatabase();
 
-export function login() {
-  signInWithPopup(auth, provider).then(() => {
+export function login(callback) {
+  signInWithPopup(auth, provider).then((result) => {
+    const user = result.user;
+    callback(user);
     console.log("login ok");
   });
 }
 
-export function login2() {
-  signInWithRedirect(auth, provider);
-  getRedirectResult(auth)
-    .then((result) => {
-      console.log("login...");
-    })
-    .catch((error) => {
-      console.log("login failed");
-    });
-}
+// export function login2() {
+//   signInWithRedirect(auth, provider);
+// }
 
 export function logout() {
   signOut(auth).then(() => {
@@ -61,6 +56,20 @@ export function userState(callback) {
     } else {
     }
   });
+}
+
+export function userState2(callback) {
+  getRedirectResult(auth)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+
+      const user = result.user;
+      callback(user);
+    })
+    .catch((error) => {
+      console.log("login failed");
+    });
 }
 
 export async function getProducts() {

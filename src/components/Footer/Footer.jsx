@@ -8,7 +8,6 @@ import {
   BsVimeo,
   BsYoutube,
 } from "react-icons/bs";
-import { login2 } from "../../api/firebase";
 
 function Footer() {
   const navigate = useNavigate();

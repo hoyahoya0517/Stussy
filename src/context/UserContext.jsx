@@ -1,15 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { userState } from "../api/firebase";
+import { userState, userState2 } from "../api/firebase";
 
 const UserContext = createContext();
 
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState();
-  useEffect(() => {
-    userState((currentUser) => {
-      setUser(currentUser);
-    });
-  }, []);
+  // useEffect(() => {
+  //   userState2((currentUser) => {
+  //     setUser(currentUser);
+  //   });
+  // }, []);
   return (
     <UserContext.Provider value={{ user, uid: user && user.uid, setUser }}>
       {children}
