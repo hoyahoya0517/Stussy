@@ -3,7 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  word-spacing: 0rem;
 }
 .option {
   display: flex;
