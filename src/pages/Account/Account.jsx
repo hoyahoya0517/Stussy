@@ -15,6 +15,7 @@ import scrollLock from "scroll-lock";
 import { useNavContext } from "../../context/NavContext";
 
 function Account() {
+  const [tmiOn, setTmiOn] = useState(false);
   const accountRef = useRef();
   const { onSideMenu, onSideBag, navRef } = useNavContext();
   useEffect(() => {
@@ -27,6 +28,11 @@ function Account() {
   }, [onSideMenu, onSideBag]);
   const navigate = useNavigate();
   const { user, setUser } = useUserContext();
+  const handleTmi = () => {
+    setTmiOn((prev) => {
+      return !prev;
+    });
+  };
   useEffect(() => {
     if (user) {
       navigate("/user");
@@ -49,6 +55,18 @@ function Account() {
         >
           로그인
         </button>
+      </div>
+      <div className={styles.bottom}>
+        <span
+          className={tmiOn ? `${styles.tmiTango} ` : ``}
+          onClick={handleTmi}
+        >
+          로그인이 안 될 시
+        </span>
+        <div className={tmiOn ? `${styles.tmi}` : `${styles.hidden}`}>
+          <span>설정 - Safari - 파업 차단 옵션 끄기로 변경</span>
+          <span>설정 - Safari - 고급 - JavaScript 활성화</span>
+        </div>
       </div>
     </div>
   );
