@@ -8,6 +8,7 @@ REACT와 FIREBASE를 이용해 Stussy사이트를 클론코딩
 결제<br>
 # Skills & Tech Stack
 REACT<br>
+FIREBASE<br>
 # Link
 https://stussyclone.web.app/
 
